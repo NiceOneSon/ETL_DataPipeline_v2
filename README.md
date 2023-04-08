@@ -4,7 +4,7 @@
 기존 ver 1의 문제를 개선함. 기존 문제는 아래와 같음
 1) Dataproc
 Dataproc
-2) Airflow Node Scaling\
+2) Airflow Scaleout\
 두 가지 방안이 존재 CeleryOperator와 KubernetesPodOperator를 사용하는 방법.\
 전자의 경우 Refer.2를 보면 알 수있듯 첫째 MQ를 관리해야한다는 점, 둘째 WorkerNode를 모니터링해야한다는 점이 존재.
 따라서 Line, 오늘의 집, 쏘카 등은 Kubernetes를 사용한 Scaling을 활용함.
