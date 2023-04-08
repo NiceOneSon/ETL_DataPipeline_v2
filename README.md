@@ -1,7 +1,7 @@
 # ETL_DataPipeline_v2
 
 ## Purpose of project
-기존 !ver 1(https://github.com/NiceOneSon/ETL_DataPipeline_v1)의 문제를 개선함. 기업이 성장하면서 Airflow의 DAG, 그리고 리소스가 부족해질 때 문제가 발생
+기존 [ver 1](https://github.com/NiceOneSon/ETL_DataPipeline_v1)의 문제를 개선함. 기업이 성장하면서 Airflow의 DAG, 그리고 리소스가 부족해질 때 문제가 발생
 
 해결하기 위한 두 가지 방안이 존재 CeleryOperator와 KubernetesPodOperator를 사용하는 방법.\
 전자의 경우 Refer.2를 보면 알 수있듯 첫째 MQ를 관리해야한다는 점, 둘째 WorkerNode를 모니터링해야한다는 점이 존재하므로 후자인 KubernetesPodOperator를 사용함.
