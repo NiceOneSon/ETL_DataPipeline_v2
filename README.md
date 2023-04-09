@@ -9,7 +9,7 @@ LocalExecutor 형식으로 처리했던 version 1과 비교할 때 기업의 규
 [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
 
 2. Network Throughput\
-Dataproc의 경우 내부 HDFS를 사용하지 않고 Cloud Storage를 사용하는데 이 과정에서 Network의 비용이 많이 들 것이다.\
+Dataproc의 경우 클러스터 내부 HDFS를 사용하지 않고 외부의 Cloud Storage를 사용하는데 이 과정에서 처리해야할 데이터가 많을 수록 Network의 비용이 많이 들 것이다.\
 어떻게 비용을 절감할 수 있을지 고민해볼 것.
 
 ## Install Cluster.
