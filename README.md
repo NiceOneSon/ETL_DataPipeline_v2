@@ -5,8 +5,7 @@
 기업이 성장하면서 Airflow를 담당하는 Compute Engine의 Scaleup이 아닌 Scaleout을 통해 해결하고자 할 때.
 
 해결하기 위한 두 가지 방안이 존재 CeleryOperator와 KubernetesPodOperator를 사용하는 방법.\
-전자의 경우 Refer.2를 보면 알 수있듯 첫째 MQ를 관리해야한다는 점, 둘째 WorkerNode를 모니터링해야한다는 점이 문제로 존재함.\
-따라서, 후자인 KubernetesPodOperator를 사용.
+[Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
 
 ## Architecture of Kubernetes
 
