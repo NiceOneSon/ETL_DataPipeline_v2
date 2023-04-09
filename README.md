@@ -7,6 +7,10 @@
 해결하기 위한 두 가지 방안이 존재 CeleryOperator와 KubernetesPodOperator를 사용하는 방법.\
 [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
 
+## Install Cluster.
+### GKE 생성
+### 
+
 ## Architecture of Kubernetes
 
 
@@ -20,3 +24,6 @@ https://www.bucketplace.com/post/2021-04-13-%EB%B2%84%ED%82%B7%ED%94%8C%EB%A0%88
 
 ### 3. 쏘카 데이터 그룹 - Airflow와 함께한 데이터 환경 구축기(feat. Airflow on Kubernetes)
 https://tech.socarcorp.kr/data/2021/06/01/data-engineering-with-airflow.html
+
+### 4. Deploying Airflow on Google Kubernetes Engine with Helm
+https://towardsdatascience.com/deploying-airflow-on-google-kubernetes-engine-with-helm-28c3d9f7a26b
