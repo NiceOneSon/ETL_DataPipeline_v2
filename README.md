@@ -13,8 +13,11 @@ Dataproc의 경우 클러스터 내부 HDFS를 사용하지 않고 외부의 Clo
 어떻게 비용을 절감할 수 있을지 고민해볼 것.
 
 ## Install Cluster.
-두 가지를 참고 했다.
+두 가지를 참고 했다.\
+1. Airflow Cluster 설치\
 [Deploying Airflow on Google Kubernetes Engine with Helm](https://towardsdatascience.com/deploying-airflow-on-google-kubernetes-engine-with-helm-28c3d9f7a26b)
+
+2. 
 ### GKE 생성
 ### 
 
