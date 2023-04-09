@@ -1,7 +1,7 @@
 # ETL_DataPipeline_v2
 
 ## Purpose of project
-기존 [ver 1](https://github.com/NiceOneSon/ETL_DataPipeline_v1) 데이터 파이프라인의 문제를 개선하기 .\
+기존 [ver 1](https://github.com/NiceOneSon/ETL_DataPipeline_v1) 데이터 파이프라인의 문제를 개선하기 위함.\
 기업이 성장하면서 Airflow가 담당하는 파이프라인 개수 또는 작업량이 엄청나게 많아진다면? 효율적으로 파이프라인 작업을 어떻게 진행할 수 있을까.\
 1. Scale Out\
 LocalExecutor 형식으로 처리했던 version 1과 비교할 때 기업의 규모가 커진다면 Scale Up이 아닌 Scale Out 방식으로 활용해야함.\
