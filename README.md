@@ -13,7 +13,7 @@ Using a way having scale-out resources(server) to perform the Operators in paral
 
 - Multi processing\
 만일 데이터가 엄청 많다면 해당 operator 실행 시 너무 많은 시간이 걸릴 수 있다. 동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.\
-There is a lot of time could be spent in case of that data pipelines have to process much data. parallel, concurrent control should be needed in this time.
+There is a lot of time that should be spent when data pipelines have to deal with much data. a parallel and concurrent method should be needed in this case.
 
 
 2. Network Throughput
