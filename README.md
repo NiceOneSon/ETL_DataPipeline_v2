@@ -47,13 +47,13 @@ A default value of executor is 'CeleryExecutor'. But because this project won't 
 
 
 ## Refer
-### 1. Kubernetes를 이용한 효율적인 데이터 엔지니어링
+### 1. [Line] Kubernetes를 이용한 효율적인 데이터 엔지니어링
 https://engineering.linecorp.com/ko/blog/data-engineering-with-airflow-k8s-2
 
-### 2. 버킷플레이스 Airflow 도입기
+### 2. [버킷플레이스] Airflow 도입기
 https://www.bucketplace.com/post/2021-04-13-%EB%B2%84%ED%82%B7%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4-airflow-%EB%8F%84%EC%9E%85%EA%B8%B0/
 
-### 3. 쏘카 데이터 그룹 - Airflow와 함께한 데이터 환경 구축기(feat. Airflow on Kubernetes)
+### 3. [SOCAR] 데이터 그룹 - Airflow와 함께한 데이터 환경 구축기(feat. Airflow on Kubernetes)
 https://tech.socarcorp.kr/data/2021/06/01/data-engineering-with-airflow.html
 
 ### 4. Deploying Airflow on Google Kubernetes Engine with Helm
