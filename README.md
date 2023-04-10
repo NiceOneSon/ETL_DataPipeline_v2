@@ -14,7 +14,7 @@ Operator를 병렬로 수행하기 위해 Executor를 LocalExecutor 방식으로
 동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.
 
 2. Network Throughput\
-- Shuffling
+- Shuffling\
 Dataproc의 경우 클러스터 내부 HDFS를 사용하지 않고 외부의 Cloud Storage를 사용하는데 이 과정에서 처리해야할 데이터가 많을 수록 Network의 비용이 많이 들 것이다.\
 어떻게 비용을 절감할 수 있을지 고민해볼 것.
 
