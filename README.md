@@ -25,7 +25,12 @@ Dataproc의 경우 클러스터 내부 HDFS를 사용하지 않고 외부의 Clo
 1. Airflow Cluster 설치\
 [Deploying Airflow on Google Kubernetes Engine with Helm](https://towardsdatascience.com/deploying-airflow-on-google-kubernetes-engine-with-helm-28c3d9f7a26b)
 
-2. 
+2. yaml 파일 변경
+- Webserver svc
+helm 초기 webserver 서비스 설정은 ClusterIP로 설정되어 있다. Webserver는 외부에서 접근 가능해야하기 때문에 Cluster 내부에서만 접근 가능한 ClusterIP 타입이 아닌 LoadBalancer를 선택했다. [참고](https://seongjin.me/kubernetes-service-types/)
+- Executor
+helm 초기 Executor 설정은 CeleryExecutor인데 MQ가 아닌 Airflow-scheduler를 활용하는 LocalExecutor로 동작시켜 분산시킬 것임\
+
 ### GKE 생성
 ### 
 
