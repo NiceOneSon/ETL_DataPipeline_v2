@@ -8,9 +8,8 @@ especially, Version 2 is needed for efficiency of Version 1. There are two types
 1. 병렬 컴퓨팅(Parallel computing)
 - Auto Scaling\
 스케일 아웃 방식이 필요합니다. 이는 기존 Local VM 위 LocalExecutor를 Execution으로 사용한 지난 Version 1 프로젝트는 데이터 파이프라인이 증가함에 따라 문제가 생길 수 있습니다.\
-Using a way having scale-out resources(server) to perform the Operators in parallel, instead of such as LocalExecutor which can perform the pipeline on a single VM and multiprocessing.
-
-[Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
+Using a way having scale-out resources(server) to perform the Operators in parallel, instead of such as LocalExecutor which can perform the pipeline on a single VM and multiprocessing.\
+[Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용\
 Based on [operators](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec), being decided KubernetesPodOperator.
 
 - Multi processing\
