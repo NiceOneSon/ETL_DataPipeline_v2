@@ -9,7 +9,7 @@ Operator를 병렬로 수행하기 위해 Executor를 LocalExecutor 방식으로
 해결하기 위한 두 가지 방안이 존재 CeleryOperator와 KubernetesPodOperator를 사용하는 방법.\
 [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
 
-- 멀티 프로세싱
+- Multi processing\
 만일 데이터가 엄청 많다면 해당 operator 실행 시 너무 많은 시간이 걸릴 수 있다.\
 동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.
 
