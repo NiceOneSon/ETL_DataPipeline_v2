@@ -5,7 +5,7 @@
 Version 2는 Version 1의 효율성의 문제를 해결하고자 함.
 1. 병렬 컴퓨팅
 
-1.1 Scale Out\
+a. Scale Out\
 Operator를 병렬로 수행하기 위해 Executor를 LocalExecutor 방식으로 처리했던 version 1과 비교할 때 기업의 규모가 커진다면 Scale Up이 아닌 Scale Out 방식으로 활용해야함.\
 해결하기 위한 두 가지 방안이 존재 CeleryOperator와 KubernetesPodOperator를 사용하는 방법.\
 [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
