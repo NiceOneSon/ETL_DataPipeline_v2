@@ -1,12 +1,16 @@
 # ETL_DataPipeline_v2
 
 ## Purpose of project
+이 프로젝트는 Version 1이 가진 효율성 문제를 고민하고 해결하고자 합니다. 고려 사항으로는 크게 아래 두 가지가 존재합니다.\
 This project is aimed for The pipeline [ver 1](https://github.com/NiceOneSon/ETL_DataPipeline_v1).\
 especially, Version 2 is needed for efficiency of Version 1.
-1. Parallel computing
-- Auto Scaling\
-Using a way having scale-out resources(server) to perform the Operators in parallel, instead of such as LocalExecutor which can perform the pipeline on a single VM and multiprocessing.
 
+1. 병렬 컴퓨팅(Parallel computing)
+- Auto Scaling\
+스케일 아웃 방식이 필요합니다. 이는 기존 Local VM 위 LocalExecutor를 Execution으로 사용한 지난 Version 1 프로젝트는 데이터 파이프라인이 증가함에 따라 문제가 생길 수 있습니다.\
+Using a way having scale-out resources(server) to perform the Operators in parallel, instead of such as LocalExecutor which can perform the pipeline on a single VM and multiprocessing.\
+
+두 가지 고려 사항이 존재합니다.\
 There are two types consideration\
 [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용
 
