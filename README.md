@@ -11,14 +11,13 @@ Using a way having scale-out resources(server) to perform the Operators in paral
 
 
 - Multi processing\
-만일 데이터가 엄청 많다면 해당 operator 실행 시 너무 많은 시간이 걸릴 수 있다. 동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.\
+만일 데이터가 엄청 많다면 해당 operator 실행 시 너무 많은 시간이 걸릴 수 있습니다. 동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.\
 There is a lot of time that should be spent when data pipelines have to deal with much data. a parallel and concurrent method should be needed in this case.
 
 
 2. Network Throughput
 - Shuffling\
-Dataproc의 경우 클러스터 내부 HDFS를 사용하지 않고 외부의 Cloud Storage를 사용하는데 이 과정에서 처리해야할 데이터가 많을 수록 Network의 비용이 많이 들 것이다.\
-어떻게 비용을 절감할 수 있을지 고민해볼 것.
+Dataproc의 경우 클러스터 내부 HDFS를 사용하지 않고 외부의 Cloud Storage를 사용하는데 이 과정에서 처리해야할 데이터가 많을 수록 Network의 비용이 많이 들 것입니다.\ 언제 셔플링이 발생하고, 어떻게 인식하고, 어떤 방법이 효율적인지를 고려할 것입니다.
 
 
 ## Installation for Airflow cluster.
