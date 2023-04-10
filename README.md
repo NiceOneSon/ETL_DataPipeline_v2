@@ -11,10 +11,10 @@ especially, Version 2 is needed for efficiency of Version 1. There are two types
 Using a way having scale-out resources(server) to perform the Operators in parallel, instead of such as LocalExecutor which can perform the pipeline on a single VM and multiprocessing. Based on [operators](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec), being decided KubernetesPodOperator.
 
 
-
 - Multi processing\
-만일 데이터가 엄청 많다면 해당 operator 실행 시 너무 많은 시간이 걸릴 수 있다.\
-동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.
+만일 데이터가 엄청 많다면 해당 operator 실행 시 너무 많은 시간이 걸릴 수 있다. 동시성 & 병렬성 제어로 데이터를 가져오는 방법을 고려.\
+There is a lot of time could be spent in case of that data pipelines have to process much data. parallel, concurrent control should be needed in this time.
+
 
 2. Network Throughput
 - Shuffling\
