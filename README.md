@@ -3,10 +3,7 @@
 ## Purpose of project
 이 프로젝트는 Version 1이 가진 효율성 문제를 고민하고 해결하고자 합니다. 고려 사항으로는 크게 아래 두 가지가 존재합니다.\
 This project is aimed for The pipeline [ver 1](https://github.com/NiceOneSon/ETL_DataPipeline_v1).\
-especially, Version 2 is needed for efficiency of Version 1.
-
-두 가지 고려 사항이 존재합니다.\
-There are two types consideration\
+especially, Version 2 is needed for efficiency of Version 1. There are two types consideration\
 
 1. 병렬 컴퓨팅(Parallel computing)
 - Auto Scaling\
