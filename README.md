@@ -40,6 +40,9 @@ A default value of the webserver service's type is 'ClusterIP'. But only the web
 helm 초기 Executor 설정은 CeleryExecutor인데 MQ가 아닌 Airflow-scheduler를 활용하는 LocalExecutor로 동작시켜 분산시킬 것임\
 A default value of executor is 'CeleryExecutor'. But because this project won't use a way using the Message Queue, so change the executor into 'LocalExecutor'.
 
+3.  Postgresql secret error
+설치하다보면 values.yaml에 위 두 가지 수정사항을 변경하고 kubectl로 업데이트를 할 때 secret 관련 에러가 발생한다.
+[문제 해결](https://www.notion.so/Installation-b2772bf65e2d4b729a5bd8fd05b98097?pvs=4#8001b5f3669e4fb4ba185602a5a0f08e) 참고로 해결했다
 ### GKE 생성
 ### 
 
