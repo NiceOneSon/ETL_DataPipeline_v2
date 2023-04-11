@@ -7,7 +7,7 @@ This project is aimed for improving efficiency of The pipeline [ver 1](https://g
 
 1. 병렬 컴퓨팅(Parallel computing)
 - Auto Scaling\
-스케일 아웃 방식이 필요함. 이는 기존 Local VM 위 LocalExecutor를 Execution으로 사용한 지난 Version 1 프로젝트는 데이터 파이프라인이 증가함에 따라 문제가 생길 수 있음. [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesPodOperator를 사용.\
+스케일 아웃 방식이 필요함. 이는 기존 Local VM 위 LocalExecutor를 사용한 지난 Version 1 프로젝트는 데이터 파이프라인이 증가함에 따라 문제가 생길 수 있음. [Operator 정리](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec)를 근거로 KubernetesExecutor와 KubernetesPodOperator를 사용.\
 Using a way having scale-out resources(server) to perform the Operators in parallel is needed, instead of such as LocalExecutor which can perform the pipeline on a single VM and multiprocessing. Based on [operators](https://www.notion.so/Operators-eb269379975a48be90f6089a03a8f4ec),KubernetesPodOperator is decided.
 
 
@@ -37,12 +37,9 @@ Webserver는 외부에서 접근 가능해야하기 때문에 Cluster 내부에�
 A default value of the webserver service's type is 'ClusterIP'. But only the webserver has to be accessed from the outside of a cluster, so the webserver service's type should be changed into 'LoadBalancer'.
 
 - Executor\
-helm 초기 Executor 설정은 CeleryExecutor인데 MQ가 아닌 Airflow-scheduler를 활용하는 LocalExecutor로 동작시켜 분산시킬 것임\
-A default value of executor is 'CeleryExecutor'. But because this project won't use a way using the Message Queue, so change the executor into 'LocalExecutor'.
+helm 초기 Executor 설정은 CeleryExecutor인데 MQ 등 인프라 관리를 하지 않기위해 KubernetesExecutor 방식으로 동작시켜 분산시킬 것임\
+A default value of executor is 'CeleryExecutor'. But because this project won't use a way using the Message Queue, so change the executor into 'KubernetesExecutor'.
 
-3.  Postgresql secret error
-설치하다보면 values.yaml에 위 두 가지 수정사항을 변경하고 kubectl로 업데이트를 할 때 secret 관련 에러가 발생한다.
-[문제 해결](https://www.notion.so/Installation-b2772bf65e2d4b729a5bd8fd05b98097?pvs=4#8001b5f3669e4fb4ba185602a5a0f08e) 참고로 해결했다
 ### GKE 생성
 ### 
 
