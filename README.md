@@ -33,7 +33,7 @@ a parallel and concurrent method are needed in this case.
 2. yaml 파일 변경(Config yaml files)
 - Webserver svc\
 helm 초기 webserver 서비스 설정은 ClusterIP로 설정되어 있다.\
-Webserver는 외부에서 접근 가능해야하기 때문에 Cluster 내부에서만 접근 가능한 ClusterIP 타입이 아닌 LoadBalancer를 선택했다. [참고](https://seongjin.me/kubernetes-service-types/)\
+Webserver는 외부에서 접근 가능해야하기 때문에 Cluster 내부에서만 접근 가능한 ClusterIP 타입이 아닌 LoadBalancer를 선택. [참고](https://seongjin.me/kubernetes-service-types/)\
 A default value of the webserver service's type is 'ClusterIP'. But only the webserver has to be accessed from the outside of a cluster, so the webserver service's type should be changed into 'LoadBalancer'.
 
 - Executor\
