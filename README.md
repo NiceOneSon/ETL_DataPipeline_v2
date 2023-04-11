@@ -22,6 +22,8 @@ a parallel and concurrent method are needed in this case.
 - Compression Algorithm
 - Locality
 - Shuffling
+
+3. 여러 개발 환경
 언제 셔플링이 발생하고, 어떻게 인식하고, 어떤 방법이 효율적인지를 고려할 것.
 
 
