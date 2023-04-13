@@ -46,7 +46,7 @@ A default value of executor is 'CeleryExecutor'. But because this project won't 
 ### 
 
 ## Architecture of Kubernetes
-
+![K8S Architecture](./Image/Architecture.png)
 
 
 ## Refer
