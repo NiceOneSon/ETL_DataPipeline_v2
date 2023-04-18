@@ -47,7 +47,7 @@ class Extract():
         
         
 
-    def extract(self, page):
+    def extract(self, page) -> dict:
         url = self.url
         executionDate = self.executionDate
 
@@ -72,11 +72,17 @@ class Extract():
                       {executionDate} and url : {url} received\n')
         
         return jsonResult
+    
+    def makeDF(self,
+               results: List[dict])-> DataFrame: 
+        
+        dataframe = pd.DataFrame()
+        return dataframe
 
     def StoreJson(self, 
                   dataframe: DataFrame,
                   bucket: str, 
-                  objectName: str):
+                  objectName: str)-> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             tmp_path = os.path.join(tmp_dir, f'tempDF_{self.page}.csv')
             dataframe.to_csv(tmp_path, index = False)
@@ -88,12 +94,13 @@ class Extract():
             )
             logging.info(f'The file is completely inserted.')
 
-    def execute(self): # return type : DataFrame
+
+    def execute(self)-> List[dict]: # return type : list[dict]
         results = []
         num_of_thread = self.num_of_thread
         control = True
         lock, page = self.lock, self.page
-        print('before start!')
+        logging.info('Crawling start!')
         submitteds = set()
         with ThreadPoolExecutor(max_workers=num_of_thread) as executor:
             
@@ -118,28 +125,20 @@ class Extract():
                     submitteds.remove(submitted)
                     submitteds.add(executor.submit(self.extract, page))
 
-        print('execute finishied!')
+        logging.info('Crawling Finished!')
         print(result)
-        # dataframe = pd.DataFrame(result)
-
-        # self.StoreJson(dataframe=dataframe,
-        #                bucket=self.bucket,
-        #                objectName= self.object)
         return results
     
         
         
-
-if __name__ == '__main__':
-    import time
-    s = time.time()
-    ext = Extract(
-        execution_date='20230417',
-        url = 'https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?',
-        bucket = None,
-        object_path=None,
-        params=[('serviceKey', 'wKGRs4uOPfXPP1gmBMd619uXkZe0IijRF%2FosAG4iM4BUnCeA7bjNsptqe%2FUS6snti8Ugs9aTBLCImeLuXB4ecQ%3D%3D'),
-                ('numOfRows', '2000'),
-                ('resultType', 'json')]
-    )
-    result = ext.execute()
+# 사용 예시
+#     ext = Extract(
+#         execution_date='20230417',
+#         url = 'https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?',
+#         bucket = None,
+#         object_path=None,
+#         params=[('serviceKey', 'wKGRs4uOPfXPP1gmBMd619uXkZe0IijRF%2FosAG4iM4BUnCeA7bjNsptqe%2FUS6snti8Ugs9aTBLCImeLuXB4ecQ%3D%3D'),
+#                 ('numOfRows', '2000'),
+#                 ('resultType', 'json')]
+#     )
+#     result = ext.execute()
