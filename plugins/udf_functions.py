@@ -1,4 +1,8 @@
-
+###
+# UDF : User Defined Funtions
+# Class
+# 1. Extract : 비동기 방식으로 서버의 데이터를 크롤링해오는 객체 생성 및 작업 수행.(2022-04-18)
+### 
 
 import os
 import logging
