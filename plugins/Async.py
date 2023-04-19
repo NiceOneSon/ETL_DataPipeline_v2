@@ -29,7 +29,6 @@ class GCSAsyncExtractOperator(BaseOperator, GCSHook):
                 elements: List[Tuple[str, str]],
                 **kwargs
                 ):
-        
         """
         execution_date : When is the time to extract.
         url : Server url is needed.
