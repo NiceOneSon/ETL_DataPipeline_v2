@@ -38,7 +38,7 @@ class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
         object_path : what object name to store.
         elements : elements to add on the url.
         """
-        BaseOperator.__init__(**kwargs)
+        super.__init__(**kwargs)
         # GCSHook(gcp_conn_id='gcp_conn_id', op_kwargs=op_kwargs)
         self.op_kwargs = op_kwargs
         self.executionDate = execution_date
