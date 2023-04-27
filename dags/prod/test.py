@@ -10,7 +10,7 @@ default_args = {'dag_id' : 'test_thread',
                 'email_on_failure' : False,
                 'email_on_retry' : False,
                 'retries' : 2,
-                'start_date' : datetime(2023, 1, 1),
+                'start_date' : datetime.datetime(2023, 1, 1),
                 'schedule_interval' : '0 0 * * *'
                 }
 
