@@ -25,8 +25,8 @@ class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
                 gcp_conn_id: str,
                 bucket: str,
                 object_path: str,
-                op_kwargs: Mapping[str, Any],
-                elements: List[Tuple[str, str]],
+                op_kwargs: Mapping[str, Any] | None = None,
+                elements: List[Tuple[str, str]] | None = None,
                 **kwargs
                 ):
         """
