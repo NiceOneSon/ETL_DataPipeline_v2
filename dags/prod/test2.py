@@ -1,4 +1,5 @@
 import os
+import logging
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 from airflow import DAG
@@ -9,11 +10,11 @@ default_args = {
                 'email_on_failure' : False,
                 'email_on_retry' : False,
                 'retries' : 2,
-                'start_date' : datetime(2023, 1, 1),
-                # 'retry_delay' : timedelta(seconds = 300),
+                'start_date' : datetime(2023, 4, 25),
                 'schedule_interval' : '0 0 * * *'
                 }
 def Hello():
+    logging.info('Hello World.')
     return 'Hello World!'
 
 with DAG(
@@ -27,3 +28,4 @@ with DAG(
         op_args = ["{{ ds_nodash }}"],
         dag = dag
     )
+    extractOperator
