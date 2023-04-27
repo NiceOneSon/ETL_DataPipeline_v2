@@ -15,8 +15,12 @@ default_args = {
                 }
 
 
-with DAG(dag_id = 'test_thread', default_args=default_args) as dag:
+with DAG(
+    dag_id = 'test_thread',
+    default_args=default_args,
+  ) as dag:
     extract = GCSAsyncExtractOperator(
+        task_id = 'AsyncExetractor',
         execution_date='{{ ds_nodash }}',
         gcp_conn_id = 'gcp_conn_id',
         bucket='kube-airflow-bucket',
