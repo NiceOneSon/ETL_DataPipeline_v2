@@ -18,7 +18,7 @@ from airflow.utils.context import Context, context_merge
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from airflow.providers.google.cloud.operators.gcs import GCSHook
 
-class GCSAsyncExtractOperator(BaseOperator, GCSHook):
+class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
     def __init__(self,
                 execution_date: str,
                 url: str, 
@@ -38,7 +38,7 @@ class GCSAsyncExtractOperator(BaseOperator, GCSHook):
         elements : elements to add on the url.
         """
         BaseOperator.__init__(**kwargs)
-        GCSHook(gcp_conn_id='gcp_conn_id', op_kwargs=op_kwargs)
+        # GCSHook(gcp_conn_id='gcp_conn_id', op_kwargs=op_kwargs)
         self.op_kwargs = op_kwargs
         self.executionDate = execution_date
         self.url = url
