@@ -3,7 +3,7 @@ from plugins.Async import GCSAsyncExtractOperator
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
 
-default_args = {'dag_id' : 'test_thread',
+default_args = {
                 'catchup' : False,
                 'owner' : 'airflow',
                 'depends_on_past' : False,
@@ -15,7 +15,7 @@ default_args = {'dag_id' : 'test_thread',
                 }
 
 
-with DAG(default_args=default_args) as dag:
+with DAG(dag_id = 'test_thread', default_args=default_args) as dag:
     extract = GCSAsyncExtractOperator(
         execution_date='{{ ds_nodash }}',
         url = 'https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?',
