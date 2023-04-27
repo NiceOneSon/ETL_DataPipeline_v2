@@ -13,12 +13,12 @@ import threading
 
 from typing import Mapping, Any, Collection
 from pandas.core.api import DataFrame
-from airflow.models import BaseOperator
+from airflow.models.baseoperator import BaseOperator
 from airflow.utils.context import Context, context_merge
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from airflow.providers.google.cloud.operators.gcs import GCSHook
 
-class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
+class GCSAsyncExtractOperator(BaseOperator):
     def __init__(
             self,
             execution_date: str | None = None,
