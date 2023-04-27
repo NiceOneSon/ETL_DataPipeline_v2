@@ -11,7 +11,7 @@ import requests
 import pandas as pd
 import threading
 
-from typing import List, Tuple, Mapping, Any
+from typing import Mapping, Any, Collection
 from pandas.core.api import DataFrame
 from airflow.models import BaseOperator
 from airflow.utils.context import Context, context_merge
@@ -25,8 +25,8 @@ class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
                 gcp_conn_id: str,
                 bucket: str,
                 object_path: str,
+                elements: Collection[Any] | None = None,
                 op_kwargs: Mapping[str, Any] | None = None,
-                elements: List[Tuple[str, str]] | None = None,
                 **kwargs
                 ):
         """
@@ -84,7 +84,7 @@ class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
     
     
     def makeDF(self,
-               results: List[dict])-> DataFrame: 
+               results: Collection[Any])-> DataFrame: 
         dataframe = pd.DataFrame()
         return dataframe
 
