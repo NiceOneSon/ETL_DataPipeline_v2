@@ -28,7 +28,7 @@ class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
                 elements: Collection[Any] | None = None,
                 op_kwargs: Mapping[str, Any] | None = None,
                 **kwargs
-                ):
+                ) -> None:
         """
         execution_date : When is the time to extract.
         url : Server url is needed.
