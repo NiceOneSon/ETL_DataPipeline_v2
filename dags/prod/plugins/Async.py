@@ -21,13 +21,14 @@ from airflow.providers.google.cloud.operators.gcs import GCSHook
 class GCSAsyncExtractOperator(BaseOperator):
     def __init__(
             self,
-            execution_date: str | None = None,
-            url: str | None = None, 
-            gcp_conn_id: str | None = None,
-            bucket: str | None = None,
-            object_path: str | None = None,
-            elements: Collection[Any] | None = None,
-            op_kwargs: Mapping[str, Any] | None = None,
+            *,
+            execution_date: str = None,
+            url: str = None, 
+            gcp_conn_id: str = None,
+            bucket: str = None,
+            object_path: str = None,
+            elements: Collection[Any]  = None,
+            op_kwargs: Mapping[str, Any] = None,
             **kwargs,
         ) -> None:
         """
