@@ -22,22 +22,23 @@ class GCSAsyncExtractOperator(BaseOperator, GCSHook):
     def __init__(self,
                 execution_date: str,
                 url: str, 
+                gcp_conn_id: str,
                 bucket: str,
                 object_path: str,
                 op_kwargs: Mapping[str, Any],
                 elements: List[Tuple[str, str]],
                 **kwargs
                 ):
-        
         """
         execution_date : When is the time to extract.
         url : Server url is needed.
+        gcp_conn_id : The connection id to connect google cloud platform 
         bucket : where is the bucket to store.
         object_path : what object name to store.
         elements : elements to add on the url.
         """
-
-        super().__init__(**kwargs)
+        BaseOperator.__init__(**kwargs)
+        GCSHook(gcp_conn_id=gcp_conn_id)
         self.op_kwargs = op_kwargs
         self.executionDate = execution_date
         self.url = url
