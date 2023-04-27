@@ -19,16 +19,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from airflow.providers.google.cloud.operators.gcs import GCSHook
 
 class GCSAsyncExtractOperator(BaseOperator):#, GCSHook):
-    def __init__(self,
-                execution_date: str,
-                url: str, 
-                gcp_conn_id: str,
-                bucket: str,
-                object_path: str,
-                elements: Collection[Any] | None = None,
-                op_kwargs: Mapping[str, Any] | None = None,
-                **kwargs
-                ) -> None:
+    def __init__(
+            self,
+            execution_date: str,
+            url: str, 
+            gcp_conn_id: str,
+            bucket: str,
+            object_path: str,
+            elements: Collection[Any] | None = None,
+            op_kwargs: Mapping[str, Any] | None = None,
+            **kwargs,
+        ) -> None:
         """
         execution_date : When is the time to extract.
         url : Server url is needed.
