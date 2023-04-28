@@ -57,9 +57,14 @@ airflowVersion: "2.4.1"
 # Images
 images:
   airflow:
+    config:
+      AIRFLOW__LOGGING__REMOTE_LOGGING: "True"
+      AIRFLOW__LOGGING__REMOTE_BASE_LOG_FOLDER: "gs://kube-airflow-bucket/airflow/logs"
+      AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID: "gcp_conn_id"
     repository: ~
     tag: ~
     pullPolicy: IfNotPresent
+    
   # To avoid images with user code, you can turn this to 'true' and
   # all the 'run-airflow-migrations' and 'wait-for-airflow-migrations' containers/jobs
   # will use the images from 'defaultAirflowRepository:defaultAirflowTag' values
@@ -486,6 +491,8 @@ workers:
 
     # Annotations to add to worker kubernetes service account.
     annotations: {}
+      # iam.gke.io/gcp-service-account: "gke-serviceaccount@airflow-gke-383209.iam.gserviceaccount.com"
+
 
   # Allow KEDA autoscaling.
   # Persistence.enabled must be set to false to use KEDA.
@@ -527,7 +534,7 @@ workers:
     # Execute init container to chown log directory.
     # This is currently only needed in kind, due to usage
     # of local-path provisioner.
-    fixPermissions: false
+    fixPermissions: true
     # Annotations to add to worker volumes
     annotations: {}
 
@@ -1843,11 +1850,14 @@ dags:
 
 logs:
   persistence:
+
     # Enable persistent volume for storing logs
-    enabled: false
+    enabled: true
     # Volume size for logs
+
     size: 100Gi
     # If using a custom storageClass, pass name here
+
     storageClassName:
     ## the name of an existing PVC to use
     existingClaim:
